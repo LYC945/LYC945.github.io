@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>surveillance-upload</title>
+<meta name="description" content="把自家监控录像备份到自己的 Google Drive 的个人工具。">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <div class="mark" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M7 18a4.5 4.5 0 0 1-.5-8.97A6 6 0 0 1 18 8.5a4 4 0 0 1-.5 9.5"/><path d="M12 12v9"/><path d="m8.5 15.5 3.5-3.5 3.5 3.5"/></svg>
+    </div>
+    <h1>surveillance-upload</h1>
+    <p class="lead">把自家监控录像备份到自己的 Google Drive。</p>
+  </header>
+
+  <p>这是一个只给自己用的工具，跑在我家里的一台电脑上。电脑上的监控程序每 5 分钟录一段视频；
+    surveillance-upload 用开源工具 <a href="https://rclone.org/">rclone</a>
+    把录完的片段复制到我自己的 Google Drive，<code>Surveillance/recordings/</code> 文件夹下。
+    这样就算电脑丢了、坏了，录像还在。</p>
+
+  <div class="card">
+    <p><strong>它能碰到什么</strong></p>
+    <ul>
+      <li>只申请 <code>drive.file</code> 权限：只能看到、修改它自己上传的文件，看不到 Drive 里的其他任何东西。</li>
+      <li>只上传录像，从不删除文件，本机和 Drive 上都不删。</li>
+      <li>数据只在这台电脑和授权账号自己的 Google Drive 之间传输，没有任何服务器或第三方经手。</li>
+    </ul>
+  </div>
+
+  <p>它不是公开服务，没有网页登录，也不对外提供下载。随时可以在
+    <a href="https://myaccount.google.com/permissions">Google 账号的第三方应用权限页面</a>撤销授权。</p>
+
+  <section class="en" lang="en">
+    <hr>
+    <h2>English</h2>
+    <p>surveillance-upload is a personal tool that runs on one home computer. It uses the
+      open-source tool <a href="https://rclone.org/">rclone</a> to copy finished home surveillance
+      recordings into the owner's own Google Drive, under <code>Surveillance/recordings/</code>.</p>
+    <p>It requests only the <code>drive.file</code> scope, so it can see and change only the files
+      it uploaded itself. It never deletes files. Data goes only between that computer and the
+      authorizing account's own Google Drive; no server or third party is involved. It is not a
+      public service. Access can be revoked at any time in your
+      <a href="https://myaccount.google.com/permissions">Google Account permissions</a>.</p>
+  </section>
+
+  <nav>
+    <a href="privacy.html">隐私政策 · Privacy Policy</a>
+    <a href="terms.html">服务条款 · Terms of Service</a>
+  </nav>
+</main>
+</body>
+</html>
